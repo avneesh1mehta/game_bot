@@ -78,6 +78,32 @@ class AvalonGame:
         else:
             pass
 
+    async def night(self):
+    	await client.send_message(message.channel, nighttimemsg)
+        roleshuffle = copy.deepcopy(playerlist)
+        shuffle(roleshuffle)
+
+        self.roles["Merlin"] = roleshuffle[0]
+        self.roles["The Assassin"] = roleshuffle[1]
+
+        if PercAndMorg:
+            self.roles["Morgana"] = roleshuffle[2]
+            self.roles["Percival"] = roleshuffle[3]
+
+        elif Mordred:
+            self.roles["Mordred"] = roleshuffle[4]
+
+        elif Oberon:
+            self.roles["Oberon"] = roleshuffle[5]
+
+        elif Norebo:
+            self.roles["Norebo"] = roleshuffle[6]
+
+        #make fucntion/case to asssign all good/ban normies
+        else:
+            pass
+
+
     async def chooseQuest(self):
         #asks for members of the quest using @user
         return
@@ -108,30 +134,3 @@ class AvalonGame:
         Otherwise good guys win.
         """
         return
-
-
-    async def night(self):
-	       await client.send_message(message.channel, nighttimemsg)
-           roleshuffle = copy.deepcopy(playerlist)
-           shuffle(roleshuffle)
-
-           self.roles["Merlin"] = roleshuffle[0]
-           self.roles["The Assassin"] = roleshuffle[1]
-
-           if PercAndMorg:
-               self.roles["Morgana"] = roleshuffle[2]
-               self.roles["Percival"] = roleshuffle[3]
-
-           elif Mordred:
-               self.roles["Mordred"] = roleshuffle[4]
-
-           elif Oberon:
-               self.roles["Oberon"] = roleshuffle[5]
-
-           elif Norebo:
-               self.roles["Norebo"] = roleshuffle[6]
-
-           #make fucntion/case to asssign all good/ban normies
-
-       else:
-           pass
