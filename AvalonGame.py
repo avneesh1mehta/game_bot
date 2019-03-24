@@ -78,6 +78,37 @@ class AvalonGame:
         else:
             pass
 
+    async def chooseQuest(self):
+        #asks for members of the quest using @user
+        return
+
+    async def voteQuest(self):
+        """sends a dm to the players to see if they approve or reject the quest.
+        ask 'Please type "approve" or "reject".
+        """
+        return
+
+    async def quest(self):
+        """sends a dm to the players on the quest. if exalibur is a part of
+        the game, allow the player to view and switch the vote of one person if
+        they choose"""
+
+        return
+
+    async def questResults(self):
+        """posts a message about the results of the quest"""
+        return
+
+    async def assassinate(self):
+        """If the good guys are able to sucessfully complete 3 quests, the bot
+        sends a message directed at the Assassin.
+        "Alright @Assassin, who do you think is Merlin? (Please use @user)"
+
+        If Merlin is chosen correctly, send a message saying bad guys won.
+        Otherwise good guys win.
+        """
+        return
+
 
     async def night(self):
 	       await client.send_message(message.channel, nighttimemsg)
@@ -104,4 +135,3 @@ class AvalonGame:
 
        else:
            pass
-           
