@@ -1,5 +1,10 @@
 class AvalonGame:
     roles = {}
+    PercAndMorg = False;
+    Mordred = False;
+    Oberon = False;
+    Norebo = False;
+
     def __init__(self):
         self.players = []
         self.quest = []
@@ -51,7 +56,7 @@ class AvalonGame:
         #should ask the player for what roles they want to play with
             return
 
-    async def loadRoles(self, roleList):
+    async def loadRoles(self):
         self.roles["Merlin"] = ""
         self.roles["The Assassin"] = ""
 
@@ -78,8 +83,25 @@ class AvalonGame:
 	       await client.send_message(message.channel, nighttimemsg)
            roleshuffle = copy.deepcopy(playerlist)
            shuffle(roleshuffle)
+
            self.roles["Merlin"] = roleshuffle[0]
            self.roles["The Assassin"] = roleshuffle[1]
-           self.roles["Tenant farmer, Loyal Servant of Arthur"] = roleshuffle[2]
-           self.roles["Omegalul Loyal Servant of Arthur"] = roleshuffle[3]
-           self.roles["Dat boi, Minion of Mordred"] = roleshuffle[4]
+
+           if PercAndMorg:
+               self.roles["Morgana"] = roleshuffle[2]
+               self.roles["Percival"] = roleshuffle[3]
+
+           elif Mordred:
+               self.roles["Mordred"] = roleshuffle[4]
+
+           elif Oberon:
+               self.roles["Oberon"] = roleshuffle[5]
+
+           elif Norebo:
+               self.roles["Norebo"] = roleshuffle[6]
+
+           #make fucntion/case to asssign all good/ban normies
+
+       else:
+           pass
+           
